@@ -1,0 +1,28 @@
+﻿@model EmailClient.Models.EmailModel
+
+<h2>Send Email</h2>
+
+<form asp-action="SendEmail" method="post">
+    <div>
+        <label>Recipient</label>
+        <input asp-for="Recipient" />
+    </div>
+    <div>
+        <label>Subject</label>
+        <input asp-for="Subject" />
+    </div>
+    <div>
+        <label>Body</label>
+        <textarea asp-for="Body"></textarea>
+    </div>
+    <div>
+        <button type="submit">Send Email</button>
+    </div>
+</form>
+
+@if (ViewBag.Message != null)
+{
+    <div>
+        <p>@ViewBag.Message</p>
+    </div>
+}
