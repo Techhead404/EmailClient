@@ -1,25 +1,47 @@
 ﻿@model EmailClient.Models.EmailModel
 
-<h2>Send an Email</h2>
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <h2 class="text-center mb-4">Send an Email</h2>
 
-<form asp-action="SendEmail" method="post">
-    <div>
-        <label for="Recipient">Recipient Email:</label>
-        <input asp-for="Recipient" />
-    </div>
-    <div>
-        <label for="Subject">Subject:</label>
-        <input asp-for="Subject" />
-    </div>
-    <div>
-        <label for="Body">Body:</label>
-        <textarea asp-for="Body"></textarea>
-    </div>
+            <form asp-action="SendEmail" method="post">
+                <div class="form-group mb-3">
+                    <label for="Recipient">Recipient Email:</label>
+                    <input asp-for="Recipient" class="form-control" placeholder="Enter recipient email" />
+                </div>
+                <div class="form-group mb-3">
+                    <label for="Subject">Subject:</label>
+                    <input asp-for="Subject" class="form-control" placeholder="Enter subject" />
+                </div>
+                <div class="form-group mb-3">
+                    <label for="Body">Body:</label>
+                    <textarea asp-for="Body" class="form-control" rows="5" placeholder="Enter your message"></textarea>
+                </div>
 
-    <button type="submit">Send Email</button>
-</form>
+                <div class="text-center">
+                    <button type="submit" class="btn btn-primary">Send Email</button>
+                </div>
+            </form>
 
-@if (!string.IsNullOrEmpty(ViewBag.Message))
-{
-    <p>@ViewBag.Message</p>
-}
+            @if (TempData["Message"] != null)
+            {
+                <div id="alert" class="alert alert-success" role="alert" style="position: fixed; bottom: 10px; left: 50%; transform: translateX(-50%);">
+                    @TempData["Message"]
+                </div>
+            }
+            @section Scripts {
+        <script>
+            // Check if the alert element exists
+            var alertElement = document.getElementById("alert");
+            if (alertElement) {
+                // Set a timer to hide the alert after 10 seconds
+                setTimeout(function() {
+                    alertElement.style.display = 'none'; // Hide the alert
+                    }, 5000); // 10000 milliseconds = 10 seconds
+            }
+        </script>
+            }
+        </div>
+    </div>
+</div>

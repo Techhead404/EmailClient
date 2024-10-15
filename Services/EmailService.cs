@@ -12,29 +12,30 @@ namespace EmailClient.Services
     {
         private readonly SmtpClient _smtpClient;
         private readonly string _logFilePath;
+        private readonly string _userName;
 
         public EmailService(string Host, int Port, string LogFilePath, string UserName, string Password)
         {
             _smtpClient = new SmtpClient(Host, Port)
             {
-                //Host = Host,
-                //Port = Port,
+                Host = Host,
+                Port = Port,
                 Credentials = new NetworkCredential(UserName, Password),
-                EnableSsl = true, // Ensure SSL is enabled
-                DeliveryMethod = SmtpDeliveryMethod.Network,
-                Timeout = 20000 // Set timeout (optional)
+                EnableSsl = true
             };
+            _userName = UserName;
             _logFilePath = LogFilePath;
         }
 
-        public async Task SendEmailAsync(string recipient, string subject, string body, string userName)
+        public async Task SendEmailAsync(string recipient, string subject, string body)
         {
             int retryCount = 0;
             bool success = false;
+            
 
             var mailMessage = new MailMessage
             {
-                From = new MailAddress("testmain404@gmail.com"),
+                From = new MailAddress(_userName),
                 Subject = subject,
                 Body = body,
                 IsBodyHtml = false,
@@ -42,6 +43,7 @@ namespace EmailClient.Services
 
             mailMessage.To.Add(recipient);
 
+            //Attempt to send email up to 3 times
             while (retryCount < 3 && !success)
             {
                 try
@@ -53,16 +55,13 @@ namespace EmailClient.Services
                 catch (Exception ex)
                 {
                     retryCount++;
-                    Debug.WriteLine($"Attempt {retryCount}: Failed to send email - {ex.Message}");
-                    LogEmailAttempt(recipient, subject, $"Failed: {ex.Message}");
+                    LogEmailAttempt(recipient, subject, $"Failed > 3: {ex.Message}");
                     if (retryCount == 3)
                     {
                         throw new Exception($"Failed to send email after 3 attempts: {ex.Message}");
                     }
                 }
             }
-
-            
         }
 
         private void LogEmailAttempt(string recipient, string subject, string status)
@@ -72,8 +71,8 @@ namespace EmailClient.Services
                 Recipient = recipient,
                 Subject = subject,
                 Status = status,
-                Timestamp = DateTime.UtcNow
-            };
+                Timestamp = DateTime.UtcNow.ToString("yyyy-MM-ddTHH:mm:ssZ")
+        };
             var logJson = JsonSerializer.Serialize(logEntry);
             File.AppendAllText(_logFilePath, logJson + Environment.NewLine);
         }

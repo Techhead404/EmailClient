@@ -1,4 +1,5 @@
 using EmailClient.Services;
+using Microsoft.AspNetCore.Builder;
 
 namespace EmailClient
 {
@@ -8,12 +9,11 @@ namespace EmailClient
         {
             var builder = WebApplication.CreateBuilder(args);
 
-            // Add services to the container.
             builder.Services.AddControllersWithViews();
 
-            // Get SMTP settings from the configuration
             var smtpSettings = builder.Configuration.GetSection("SmtpSettings");
 
+            // Error handling for unable to parse Port
             if (!int.TryParse(smtpSettings["Port"], out int smtpPort))
             {
                 throw new InvalidOperationException("SMTP Port is not a valid integer.");
@@ -28,12 +28,10 @@ namespace EmailClient
                     smtpSettings["UserName"] ?? throw new ArgumentNullException(nameof(smtpSettings), "UserName not configured in SmtpSettings"),
                     smtpSettings["Password"] ?? throw new ArgumentNullException(nameof(smtpSettings), "Password not configured in SmtpSettings")
                 )
-                
             );
 
             var app = builder.Build();
 
-            // Configure the HTTP request pipeline.
             if (!app.Environment.IsDevelopment())
             {
                 app.UseExceptionHandler("/Home/Error");

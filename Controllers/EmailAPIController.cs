@@ -1,14 +1,14 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿
 using EmailClient.Models;
 using EmailClient.Services;
+using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 
 namespace EmailClient.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-
-    public class EmailAPIController : Controller
+    public class EmailAPIController : ControllerBase
     {
         private readonly EmailService _emailService;
 
@@ -18,22 +18,36 @@ namespace EmailClient.Controllers
         }
 
         [HttpPost("send")]
-        public async Task<IActionResult> SendEmailAsync([FromBody] EmailModel email)
+        public async Task<IActionResult> SendEmail([FromBody] EmailModel emailModel)
         {
             if (ModelState.IsValid)
             {
                 try
                 {
-                    await _emailService.SendEmailAsync(email.Recipient, email.Subject, email.Body, email.UserName);
-                    return Ok("Email sent successfully!");
+                    await _emailService.SendEmailAsync(emailModel.Recipient, emailModel.Subject, emailModel.Body);
+                    return Ok("Email sent successfully.");
                 }
                 catch (Exception ex)
                 {
-                    return BadRequest($"Failed to send email: {ex.Message}");
+                    return StatusCode(500, $"Internal server error: {ex.Message}");
                 }
             }
 
             return BadRequest("Invalid email model.");
+        }
+
+        // Test endpoint to return dummy email data
+        [HttpGet("test")]
+        public IActionResult GetTestEmail()
+        {
+            var testEmail = new EmailModel
+            {
+                Recipient = "dillonlgreek@gmail.com",
+                Subject = "Test Email",
+                Body = "This is a test email body."
+            };
+
+            return Ok(testEmail);
         }
     }
 }

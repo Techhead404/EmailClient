@@ -1,0 +1,81 @@
+﻿@{
+    ViewData["Title"] = "API Documentation";
+}
+
+<h2 class="d-flex justify-content-center bg-dark text-light py-5">API Documentation</h2>
+
+<h3 class="pt-5">Base URL</h3>
+<p><strong>http://your-domain/api/</strong></p>
+
+<h3 class="pt-5">Setting Up Your Email Account</h3>
+<p>To configure your email account, update the <code>appsettings.json</code> file with the following settings:</p>
+
+<div class="d-flex justify-content-center">
+    <ul class="list-unstyled" style="width: 100%;">
+        <li class="p-3 mb-2 bg-dark text-light rounded">
+            <strong>appsettings.json Configuration:</strong>
+            <pre>
+            {
+                "SmtpSettings": {
+                    "Host": "smtp.your-email-provider.com",
+                    "Port": 587,
+                    "UserName": "your-email@example.com",
+                    "Password": "your-email-password",
+                    "LogFilePath": "path/to/your/logfile.log"
+                }
+            }
+            </pre>
+        </li>
+        <li class="p-3 mb-2 bg-dark text-light rounded">
+            <strong>Important Notice for Gmail Users:</strong>
+            <p>When using a Gmail account, you must enable "Less secure app access" or use an <strong>App Password</strong> for your email client. You can generate an App Password from your Google account settings under "Security".</p>
+        </li>
+    </ul>
+</div>
+
+<h3 class="pt-5">Endpoints</h3>
+
+<div class="d-flex justify-content-center">
+    <ul class="list-unstyled" style="width: 100%;">
+        <li class="p-3 mb-2 bg-dark text-light rounded">
+            <strong>Send Email</strong>
+            <p><strong>POST</strong> <code>api/EmailAPI/send</code></p>
+            <p><strong>Description:</strong> Sends an email to the specified recipient.</p>
+            <p><strong>Request Body:</strong></p>
+            <pre>
+            {
+                "Recipient": "recipient@example.com",
+                "Subject": "Email Subject",
+                "Body": "Email body content"
+            }
+            </pre>
+            <p><strong>Response:</strong></p>
+            <pre>
+            HTTP 200 OK
+            "Email sent successfully."
+            </pre>
+            <p><strong>Error Response:</strong></p>
+            <pre>
+            HTTP 400 Bad Request
+            "Invalid email model."
+            </pre>
+            <pre>
+            HTTP 500 Internal Server Error
+            "Internal server error: {error message}"
+            </pre>
+        </li>
+
+        <li class="p-3 mb-2 bg-dark text-light rounded">
+            <strong>Test Endpoint</strong>
+            <p><strong>GET</strong> <code>api/EmailAPI/test</code></p>
+            <p><strong>Description:</strong> This is a test endpoint to demonstrate a successful response.</p>
+            <p><strong>Response:</strong></p>
+            <pre>
+            HTTP 200 OK
+            {
+                "message": "This is a test endpoint."
+            }
+            </pre>
+        </li>
+    </ul>
+</div>
