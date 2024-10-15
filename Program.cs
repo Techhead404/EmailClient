@@ -1,3 +1,5 @@
+using EmailClient.Services;
+
 namespace EmailClient
 {
     public class Program
@@ -9,29 +11,24 @@ namespace EmailClient
             // Add services to the container.
             builder.Services.AddControllersWithViews();
 
+            // Get SMTP settings from the configuration
             var smtpSettings = builder.Configuration.GetSection("SmtpSettings");
-
-            // Port number is not parsing correctly
-
-
-            /*if (!int.TryParse(portValue, out int smtpPort))
-            {
-                throw new Exception("Invalid SMTP port number in appsettings.json");
-            }*/
 
             if (!int.TryParse(smtpSettings["Port"], out int smtpPort))
             {
-                throw new Exception("Invalid SMTP port number in appsettings.json");
+                throw new InvalidOperationException("SMTP Port is not a valid integer.");
             }
 
+            // Add EmailService as a singleton, with configuration values injected from appsettings.json
             builder.Services.AddSingleton(provider =>
-                new EmailClient.Services.EmailService(
-                    smtpSettings["Host"],
+                new EmailService(
+                    smtpSettings["Host"] ?? throw new ArgumentNullException(nameof(smtpSettings), "Host not configured in SmtpSettings"),
                     smtpPort,
-                    smtpSettings["User"],
-                    smtpSettings["Pass"],
-                    builder.Configuration["LogFilePath"]
+                    smtpSettings["LogFilePath"] ?? throw new ArgumentNullException(nameof(smtpSettings), "LogFilePath not configured in SmtpSettings"),
+                    smtpSettings["UserName"] ?? throw new ArgumentNullException(nameof(smtpSettings), "UserName not configured in SmtpSettings"),
+                    smtpSettings["Password"] ?? throw new ArgumentNullException(nameof(smtpSettings), "Password not configured in SmtpSettings")
                 )
+                
             );
 
             var app = builder.Build();
@@ -40,7 +37,6 @@ namespace EmailClient
             if (!app.Environment.IsDevelopment())
             {
                 app.UseExceptionHandler("/Home/Error");
-                // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
 

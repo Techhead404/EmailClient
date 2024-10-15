@@ -4,6 +4,7 @@ using System.Net;
 using System.Net.Mail;
 using System.Threading.Tasks;
 using System.Text.Json;
+using System.Diagnostics;
 
 namespace EmailClient.Services
 {
@@ -12,51 +13,66 @@ namespace EmailClient.Services
         private readonly SmtpClient _smtpClient;
         private readonly string _logFilePath;
 
-        public EmailService(string smtpHost, int smtpPort, string smtpUsername, string smtpPassword, string logFilePath)
+        public EmailService(string Host, int Port, string LogFilePath, string UserName, string Password)
         {
-            _smtpClient = new SmtpClient(smtpHost, smtpPort)
+            _smtpClient = new SmtpClient(Host, Port)
             {
-                Credentials = new NetworkCredential(smtpUsername, smtpPassword),
-                EnableSsl = true
+                //Host = Host,
+                //Port = Port,
+                Credentials = new NetworkCredential(UserName, Password),
+                EnableSsl = true, // Ensure SSL is enabled
+                DeliveryMethod = SmtpDeliveryMethod.Network,
+                Timeout = 20000 // Set timeout (optional)
             };
-            _logFilePath = logFilePath;
+            _logFilePath = LogFilePath;
         }
 
-        public async Task SendEmail(string recipient, string subject, string body)
+        public async Task SendEmailAsync(string recipient, string subject, string body, string userName)
         {
-            var mailMessage = new MailMessage("techhead404@gmail.com", recipient, subject, body);
             int retryCount = 0;
-            bool emailSent = false;
+            bool success = false;
 
-            while (retryCount < 3 && !emailSent)
+            var mailMessage = new MailMessage
+            {
+                From = new MailAddress("testmain404@gmail.com"),
+                Subject = subject,
+                Body = body,
+                IsBodyHtml = false,
+            };
+
+            mailMessage.To.Add(recipient);
+
+            while (retryCount < 3 && !success)
             {
                 try
                 {
                     await _smtpClient.SendMailAsync(mailMessage);
-                    LogEmailAttempt(recipient, subject, body, "Success");
-                    emailSent = true;
+                    LogEmailAttempt(recipient, subject, "Success");
+                    success = true;
                 }
                 catch (Exception ex)
                 {
                     retryCount++;
-                    LogEmailAttempt(recipient, subject, body, $"Failed: {ex.Message}");
+                    Debug.WriteLine($"Attempt {retryCount}: Failed to send email - {ex.Message}");
+                    LogEmailAttempt(recipient, subject, $"Failed: {ex.Message}");
                     if (retryCount == 3)
                     {
                         throw new Exception($"Failed to send email after 3 attempts: {ex.Message}");
                     }
                 }
             }
+
+            
         }
 
-        private void LogEmailAttempt(string recipient, string subject, string body, string status)
+        private void LogEmailAttempt(string recipient, string subject, string status)
         {
             var logEntry = new
             {
                 Recipient = recipient,
                 Subject = subject,
-                Body = body,
                 Status = status,
-                Timestamp = DateTime.Now
+                Timestamp = DateTime.UtcNow
             };
             var logJson = JsonSerializer.Serialize(logEntry);
             File.AppendAllText(_logFilePath, logJson + Environment.NewLine);

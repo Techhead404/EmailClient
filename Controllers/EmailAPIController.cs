@@ -18,13 +18,13 @@ namespace EmailClient.Controllers
         }
 
         [HttpPost("send")]
-        public async Task<IActionResult> SendEmail([FromBody] EmailModel email)
+        public async Task<IActionResult> SendEmailAsync([FromBody] EmailModel email)
         {
             if (ModelState.IsValid)
             {
                 try
                 {
-                    await _emailService.SendEmail(email.Recipient, email.Subject, email.Body);
+                    await _emailService.SendEmailAsync(email.Recipient, email.Subject, email.Body, email.UserName);
                     return Ok("Email sent successfully!");
                 }
                 catch (Exception ex)

@@ -1,3 +1,67 @@
-{"Recipient":"dillonlgreek@gmail.com","Subject":"test","Body":"test body","Status":"Failed: The SMTP server requires a secure connection or the client was not authenticated. The server response was: 5.7.0 Authentication Required. For more information, go to","Timestamp":"2024-10-14T15:58:39.814378-05:00"}
-{"Recipient":"dillonlgreek@gmail.com","Subject":"test","Body":"test body","Status":"Failed: The SMTP server requires a secure connection or the client was not authenticated. The server response was: 5.7.0 Authentication Required. For more information, go to","Timestamp":"2024-10-14T15:58:40.1602021-05:00"}
-{"Recipient":"dillonlgreek@gmail.com","Subject":"test","Body":"test body","Status":"Failed: The SMTP server requires a secure connection or the client was not authenticated. The server response was: 5.7.0 Authentication Required. For more information, go to","Timestamp":"2024-10-14T15:58:40.5091941-05:00"}
+{"Recipient":"techhead404@gmail.com","Subject":"Test","Status":"Failed: Failure sending mail.","Timestamp":"2024-10-15T02:50:40.8230845Z"}
+{"Recipient":"techhead404@gmail.com","Subject":"Test","Status":"Failed: Failure sending mail.","Timestamp":"2024-10-15T02:50:40.8303918Z"}
+{"Recipient":"techhead404@gmail.com","Subject":"Test","Status":"Failed: Failure sending mail.","Timestamp":"2024-10-15T02:50:40.8325304Z"}
+{"Recipient":"techhead404@gmail.com","Subject":"Test","Status":"Failed: Failure sending mail.","Timestamp":"2024-10-15T02:50:45.3898134Z"}
+{"Recipient":"techhead404@gmail.com","Subject":"Test","Status":"Failed: Failure sending mail.","Timestamp":"2024-10-15T02:50:45.3973725Z"}
+{"Recipient":"techhead404@gmail.com","Subject":"Test","Status":"Failed: Failure sending mail.","Timestamp":"2024-10-15T02:50:45.3990911Z"}
+{"Recipient":"techhead404@gmail.com","Subject":"Test","Status":"Failed: Failure sending mail.","Timestamp":"2024-10-15T02:52:16.0088707Z"}
+{"Recipient":"techhead404@gmail.com","Subject":"Test","Status":"Failed: Failure sending mail.","Timestamp":"2024-10-15T02:52:16.0119477Z"}
+{"Recipient":"techhead404@gmail.com","Subject":"Test","Status":"Failed: Failure sending mail.","Timestamp":"2024-10-15T02:52:16.0138811Z"}
+{"Recipient":"techhead404@gmail.com","Subject":"Test","Status":"Failed: Failure sending mail.","Timestamp":"2024-10-15T02:52:33.0066925Z"}
+{"Recipient":"techhead404@gmail.com","Subject":"Test","Status":"Failed: Failure sending mail.","Timestamp":"2024-10-15T02:52:33.0150761Z"}
+{"Recipient":"techhead404@gmail.com","Subject":"Test","Status":"Failed: Failure sending mail.","Timestamp":"2024-10-15T02:52:33.0174438Z"}
+{"Recipient":"techhead404@gmail.com","Subject":"Test","Status":"Failed: Failure sending mail.","Timestamp":"2024-10-15T02:52:45.8604555Z"}
+{"Recipient":"techhead404@gmail.com","Subject":"Test","Status":"Failed: Failure sending mail.","Timestamp":"2024-10-15T02:52:45.863263Z"}
+{"Recipient":"techhead404@gmail.com","Subject":"Test","Status":"Failed: Failure sending mail.","Timestamp":"2024-10-15T02:52:45.8651154Z"}
+{"Recipient":"techhead404@gmail.com","Subject":"Test","Status":"Failed: Failure sending mail.","Timestamp":"2024-10-15T02:52:49.8533574Z"}
+{"Recipient":"techhead404@gmail.com","Subject":"Test","Status":"Failed: Failure sending mail.","Timestamp":"2024-10-15T02:52:49.8617979Z"}
+{"Recipient":"techhead404@gmail.com","Subject":"Test","Status":"Failed: Failure sending mail.","Timestamp":"2024-10-15T02:52:49.8636502Z"}
+{"Recipient":"techhead404@gmail.com","Subject":"Test","Status":"Failed: Failure sending mail.","Timestamp":"2024-10-15T02:53:06.4818809Z"}
+{"Recipient":"techhead404@gmail.com","Subject":"Test","Status":"Failed: Failure sending mail.","Timestamp":"2024-10-15T02:53:06.4838541Z"}
+{"Recipient":"techhead404@gmail.com","Subject":"Test","Status":"Failed: Failure sending mail.","Timestamp":"2024-10-15T02:53:06.4857582Z"}
+{"Recipient":"techhead404@gmail.com","Subject":"Test","Status":"Failed: Failure sending mail.","Timestamp":"2024-10-15T02:56:09.8247064Z"}
+{"Recipient":"techhead404@gmail.com","Subject":"Test","Status":"Failed: Failure sending mail.","Timestamp":"2024-10-15T02:56:22.592328Z"}
+{"Recipient":"techhead404@gmail.com","Subject":"Test","Status":"Failed: Failure sending mail.","Timestamp":"2024-10-15T02:56:23.2891361Z"}
+{"Recipient":"techhead404@gmail.com","Subject":"Test","Status":"Failed: Failure sending mail.","Timestamp":"2024-10-15T02:57:23.427554Z"}
+{"Recipient":"techhead404@gmail.com","Subject":"Test","Status":"Failed: Failure sending mail.","Timestamp":"2024-10-15T02:57:23.4364749Z"}
+{"Recipient":"techhead404@gmail.com","Subject":"Test","Status":"Failed: Failure sending mail.","Timestamp":"2024-10-15T02:57:23.4385426Z"}
+{"Recipient":"techhead404@gmail.com","Subject":"Test","Status":"Failed: Failure sending mail.","Timestamp":"2024-10-15T03:05:00.9787578Z"}
+{"Recipient":"techhead404@gmail.com","Subject":"Test","Status":"Failed: Failure sending mail.","Timestamp":"2024-10-15T03:05:00.982051Z"}
+{"Recipient":"techhead404@gmail.com","Subject":"Test","Status":"Failed: Failure sending mail.","Timestamp":"2024-10-15T03:05:00.9837337Z"}
+{"Recipient":"techhead404@gmail.com","Subject":"asdf","Status":"Failed: Failure sending mail.","Timestamp":"2024-10-15T03:05:31.6046864Z"}
+{"Recipient":"techhead404@gmail.com","Subject":"asdf","Status":"Failed: Failure sending mail.","Timestamp":"2024-10-15T03:05:31.627332Z"}
+{"Recipient":"techhead404@gmail.com","Subject":"asdf","Status":"Failed: Failure sending mail.","Timestamp":"2024-10-15T03:05:31.6431834Z"}
+{"Recipient":"techhead404@gmail.com","Subject":"asdf","Status":"Failed: Failure sending mail.","Timestamp":"2024-10-15T03:06:15.4082893Z"}
+{"Recipient":"techhead404@gmail.com","Subject":"asdf","Status":"Failed: Failure sending mail.","Timestamp":"2024-10-15T03:06:15.4247012Z"}
+{"Recipient":"techhead404@gmail.com","Subject":"asdf","Status":"Failed: Failure sending mail.","Timestamp":"2024-10-15T03:06:15.4395058Z"}
+{"Recipient":"techhead404@gmail.com","Subject":"Test","Status":"Failed: Failure sending mail.","Timestamp":"2024-10-15T03:12:05.6943121Z"}
+{"Recipient":"techhead404@gmail.com","Subject":"Test","Status":"Failed: Failure sending mail.","Timestamp":"2024-10-15T03:12:05.7168919Z"}
+{"Recipient":"techhead404@gmail.com","Subject":"Test","Status":"Failed: Failure sending mail.","Timestamp":"2024-10-15T03:12:05.7312848Z"}
+{"Recipient":"techhead404@gmail.com","Subject":"Test","Status":"Failed: Failure sending mail.","Timestamp":"2024-10-15T03:26:43.8668724Z"}
+{"Recipient":"techhead404@gmail.com","Subject":"Test","Status":"Failed: Failure sending mail.","Timestamp":"2024-10-15T03:26:43.8875816Z"}
+{"Recipient":"techhead404@gmail.com","Subject":"Test","Status":"Failed: Failure sending mail.","Timestamp":"2024-10-15T03:26:43.903813Z"}
+{"Recipient":"techhead404@gmail.com","Subject":"Test","Status":"Failed: Failure sending mail.","Timestamp":"2024-10-15T03:28:35.7142843Z"}
+{"Recipient":"techhead404@gmail.com","Subject":"Test","Status":"Failed: Failure sending mail.","Timestamp":"2024-10-15T03:28:35.7227666Z"}
+{"Recipient":"techhead404@gmail.com","Subject":"Test","Status":"Failed: Failure sending mail.","Timestamp":"2024-10-15T03:28:35.7247654Z"}
+{"Recipient":"techhead404@gmail.com","Subject":"Test","Status":"Failed: Syntax error, command unrecognized. The server response was: ","Timestamp":"2024-10-15T03:40:24.7121647Z"}
+{"Recipient":"techhead404@gmail.com","Subject":"Test","Status":"Failed: Syntax error, command unrecognized. The server response was: ","Timestamp":"2024-10-15T03:40:34.8290464Z"}
+{"Recipient":"techhead404@gmail.com","Subject":"Test","Status":"Failed: Syntax error, command unrecognized. The server response was: ","Timestamp":"2024-10-15T03:40:44.8975958Z"}
+{"Recipient":"techhead404@gmail.com","Subject":"Test","Status":"Failed: Failure sending mail.","Timestamp":"2024-10-15T03:46:42.9042947Z"}
+{"Recipient":"techhead404@gmail.com","Subject":"Test","Status":"Failed: Syntax error, command unrecognized. The server response was: ","Timestamp":"2024-10-15T03:46:53.0094921Z"}
+{"Recipient":"techhead404@gmail.com","Subject":"Test","Status":"Failed: Syntax error, command unrecognized. The server response was: ","Timestamp":"2024-10-15T03:47:03.1637992Z"}
+{"Recipient":"techhead404@gmail.com","Subject":"Test","Status":"Failed: Syntax error, command unrecognized. The server response was: ","Timestamp":"2024-10-15T03:47:14.5740635Z"}
+{"Recipient":"techhead404@gmail.com","Subject":"Test","Status":"Failed: Syntax error, command unrecognized. The server response was: ","Timestamp":"2024-10-15T03:47:24.6460953Z"}
+{"Recipient":"techhead404@gmail.com","Subject":"Test","Status":"Failed: Syntax error, command unrecognized. The server response was: ","Timestamp":"2024-10-15T03:47:34.7089801Z"}
+{"Recipient":"techhead404@gmail.com","Subject":"Test","Status":"Failed: Syntax error, command unrecognized. The server response was: ","Timestamp":"2024-10-15T03:50:12.7603218Z"}
+{"Recipient":"techhead404@gmail.com","Subject":"Test","Status":"Failed: Syntax error, command unrecognized. The server response was: ","Timestamp":"2024-10-15T03:50:22.8381897Z"}
+{"Recipient":"techhead404@gmail.com","Subject":"Test","Status":"Failed: Syntax error, command unrecognized. The server response was: ","Timestamp":"2024-10-15T03:50:32.9100433Z"}
+{"Recipient":"techhead404@gmail.com","Subject":"Test","Status":"Failed: Syntax error, command unrecognized. The server response was: ","Timestamp":"2024-10-15T03:50:45.2563892Z"}
+{"Recipient":"techhead404@gmail.com","Subject":"Test","Status":"Failed: Syntax error, command unrecognized. The server response was: ","Timestamp":"2024-10-15T03:50:55.3248168Z"}
+{"Recipient":"techhead404@gmail.com","Subject":"Test","Status":"Failed: Syntax error, command unrecognized. The server response was: ","Timestamp":"2024-10-15T03:51:05.4401961Z"}
+{"Recipient":"techhead404@gmail.com","Subject":"Test","Status":"Failed: Syntax error, command unrecognized. The server response was: ","Timestamp":"2024-10-15T03:54:11.2983745Z"}
+{"Recipient":"techhead404@gmail.com","Subject":"Test","Status":"Failed: The SMTP server requires a secure connection or the client was not authenticated. The server response was: 5.7.0 Authentication Required. For more information, go to","Timestamp":"2024-10-15T03:54:30.9395397Z"}
+{"Recipient":"techhead404@gmail.com","Subject":"Test","Status":"Failed: The SMTP server requires a secure connection or the client was not authenticated. The server response was: 5.7.0 Authentication Required. For more information, go to","Timestamp":"2024-10-15T03:54:31.4662299Z"}
+{"Recipient":"techhead404@gmail.com","Subject":"Test","Status":"Failed: The SMTP server requires a secure connection or the client was not authenticated. The server response was: 5.7.0 Authentication Required. For more information, go to","Timestamp":"2024-10-15T03:54:32.0751485Z"}
+{"Recipient":"techhead404@gmail.com","Subject":"Test","Status":"Failed: The SMTP server requires a secure connection or the client was not authenticated. The server response was: 5.7.0 Authentication Required. For more information, go to","Timestamp":"2024-10-15T03:56:47.0852808Z"}
+{"Recipient":"techhead404@gmail.com","Subject":"Test","Status":"Failed: The SMTP server requires a secure connection or the client was not authenticated. The server response was: 5.7.0 Authentication Required. For more information, go to","Timestamp":"2024-10-15T03:56:47.5451954Z"}
+{"Recipient":"techhead404@gmail.com","Subject":"Test","Status":"Failed: The SMTP server requires a secure connection or the client was not authenticated. The server response was: 5.7.0 Authentication Required. For more information, go to","Timestamp":"2024-10-15T03:56:47.9717741Z"}
